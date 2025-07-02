@@ -1,0 +1,43 @@
+<section class="slider overflow-hidden rounded-[0.5rem]">
+    <div
+      class="slider-inner flex flex-nowrap transition duration-500 ease-in-out"
+    >
+      <img
+        src="https://www.oftalmologicosanangel.com/wp-content/uploads/2024/02/Banner-sitio-web-SAO-03-1.jpg"
+        alt=""
+      /><img
+        src="https://www.oftalmologicosanangel.com/wp-content/uploads/2024/03/banner-lentes-de-sol.png"
+        alt=""
+      /><img
+        src="https://www.oftalmologicosanangel.com/wp-content/uploads/2024/02/banner-familia.png"
+        alt=""
+      /><img
+        src="https://www.oftalmologicosanangel.com/wp-content/uploads/2024/02/banner-laser-1-1.png"
+        alt=""
+      />
+    </div>
+  </section>
+
+  <style>
+    .slider-inner img {
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  </style>
+
+  <script>
+  let sliderInner = document.querySelector(".slider-inner") as HTMLElement;
+
+  let images = sliderInner.querySelectorAll("img");
+
+  let index = 1;
+
+  setInterval(function () {
+    let percentage = index * -100;
+    sliderInner.style.transform = "translateX(" + percentage + "%)";
+    index++;
+    if (index > images.length - 1) {
+      index = 0;
+    }
+  }, 15000);
+</script>

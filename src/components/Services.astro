@@ -1,0 +1,47 @@
+---
+const ServicesData = [
+  {
+    service: "Procedimientos No Quirúrgicos",
+    image:
+      "https://www.oftalmologicosanangel.com/wp-content/uploads/2025/03/Diseno-sin-titulo-36-768x768.png",
+    link: "https://www.oftalmologicosanangel.com/laser",
+  },
+  {
+    service: "Procedimientos Quirúrgicos",
+    image:
+      "https://www.oftalmologicosanangel.com/wp-content/uploads/2025/03/Diseno-sin-titulo-33-768x768.png",
+    link: "https://www.oftalmologicosanangel.com/cirugias/",
+  },
+  {
+    service: "Estudios Oftalmológicos",
+    image:
+      "https://www.oftalmologicosanangel.com/wp-content/uploads/2025/03/Diseno-sin-titulo-35-768x768.png",
+    link: "https://www.oftalmologicosanangel.com/estudios",
+  },
+];
+---
+
+<section class="container mx-auto px-7 my-10">
+  <div class="rounded-lg">
+    <div class="my-10">
+      <h1 class="text-center text-2xl font-light uppercase">Servicios que ofrecemos</h1>
+    </div>
+    <div class="w-full flex justify-between p-7">
+      {
+        ServicesData.map((item) => (
+          <div class="w-72 text-center rounded-2xl overflow-hidden shadow border border-bay-of-many-400">
+            <div>
+              <img class="w-72 object-contain" src={item.image} alt={item.service} />
+            </div>
+            <div class="py-2 bg-bay-of-many-50">
+              <h4 class="font-semibold text-bay-of-many-950">{item.service}</h4>
+            </div>
+            <div>
+              <a target="_blank" class="block py-2 bg-linear-to-r from-bay-of-many-400 to-bay-of-many-800 text-white font-semibold" href={item.link}>Ver mas</a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
